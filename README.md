@@ -28,7 +28,25 @@ npm run preview    # 本地预览打包结果
 | 社交图标 | `site.socials`——**`url` 留空字符串这一项就不显示**，填上自动出现 |
 | 项目列表 | `site.projects`；整个区不想要就把 `showProjects` 设成 `false` |
 | 自我介绍 | `site.about.paragraphs` |
-| 联系方式二维码 | 覆盖 `public/contact.png` |
+| 联系方式链接 | `site.contact.url`（QQ 加好友短链，点 Contact 直接跳转） |
+
+## 中英双语
+
+站点自带中英切换，**默认跟随浏览器语言**，用户手动切过的选择会记在 `localStorage` 里。
+
+约定很简单：`site.js` 里任何写成 `{ zh: '…', en: '…' }` 的字段都会跟着语言走，
+模板里用 `t(...)` 取值就行（实现只有 60 行，见 `src/composables/useLocale.js`）：
+
+```js
+motto: { zh: '迎着所有不确定，勇往直前。', en: 'Forge ahead bravely…' }
+```
+
+```html
+<p>{{ t(site.terminal.motto) }}</p>
+```
+
+项目名、链接、颜色这些语言无关的字段照旧直接写字符串，`t()` 会原样返回。
+切换按钮在首屏社交图标那一行的末尾（写着「中」或「EN」），点一下切换。
 
 ## 换头像
 
@@ -93,28 +111,32 @@ python3 tools/make-pixels.py --placeholder    # 换回程序化占位图
 cangjie-site/
 ├── index.html                     入口
 ├── vite.config.js                 构建配置（base: './'，放子路径也不会 404）
+├── .github/workflows/deploy.yml   push 到 main 就自动构建并发布到 Pages
 ├── public/                        原样拷贝到产物根目录
 │   ├── avatar.png                 头像原图（换这个，然后跑 npm run pixels）
-│   ├── contact.png                联系二维码
+│   ├── avatar-cutout.png          抠底版（脚本生成，窄屏圆形头像用）
 │   └── favicon.svg
 ├── src/
 │   ├── main.js
 │   ├── App.vue                    组合根
 │   ├── assets/fonts/              阿里妈妈方圆体 VF（2.6MB）
 │   ├── styles/global.css          网格背景、像素格子尺寸、全局变量
+│   ├── composables/
+│   │   └── useLocale.js           中英切换：locale 状态 + t() 取值
 │   ├── data/
 │   │   ├── site.js                ← 内容配置，日常只改这个
 │   │   ├── icons.js               SVG 图标素材
 │   │   └── pixels.js              像素矩阵（自动生成，别手改）
 │   └── components/
-│       ├── LayoutView.vue         骨架：双层滚动背景 / 回顶 / 全局弹窗
+│       ├── LayoutView.vue         骨架：双层滚动背景 / 回顶
 │       ├── TitleBar.vue           顶栏
 │       ├── HeaderView.vue         首屏
 │       ├── ProjectsSection.vue    关于 + 项目
 │       └── FooterView.vue         页脚
+├── tests/pixels.test.js           jsdom 挂载测试
 └── tools/
     ├── make-pixels.py             像素矩阵生成器（换头像）
-    ├── import-contact.py          二维码截图导入（自动裁背景 + 补静默区）
+    ├── import-contact.py          联系方式图导入
     ├── smoke.mjs                  SSR 冒烟测试
     └── preview.png                生成结果预览（自动产出）
 ```
@@ -171,7 +193,7 @@ fonttools ttLib.woff2 compress -o AlimamaFangYuanTi.woff2 AlimamaFangYuanTi-VF.t
 
 ```bash
 npm run smoke   # SSR 冒烟：整棵树渲染成 HTML 再断言关键内容（14 项）
-npm test        # jsdom 真实挂载：像素画逐帧显影、provide/inject 弹窗链路（8 项）
+npm test        # jsdom 真实挂载：像素画逐帧显影、中英切换、链接跳转（11 项）
 ```
 
 两个测试是互补的。SSR 跑不到 `onMounted`，而像素画的渲染逻辑恰恰全在 `onMounted` 里，
@@ -180,11 +202,18 @@ npm test        # jsdom 真实挂载：像素画逐帧显影、provide/inject �
 
 ## 部署
 
-产物是纯静态 + 相对路径（`base: './'`），所以：
+**已经配好了，推上去就生效。** 仓库 `X-CODER-ocs/website` 的 Pages 发布源设成了
+**GitHub Actions**（不是从分支发布），`.github/workflows/deploy.yml` 会在每次 push 到 `main` 时
+跑 `npm test` → `npm run build` → 发布 `dist/`。
 
-- **Vercel**：直接导入仓库，框架选 Vite，零配置
-- **GitHub Pages**：`npm run build` 后把 `dist/` 推到 `gh-pages` 分支即可，子路径不会 404
-- **本地看**：直接双击 `dist/index.html` 也能打开
+- 线上地址：**https://x-coder-ocs.github.io/website/**
+- 看部署状态：`gh run list --repo X-CODER-ocs/website`
+- 手动触发：仓库 Actions 页点 "Run workflow"
+
+产物是纯静态 + 相对路径（`base: './'`），所以换别的托管也不用改配置：
+
+- **Vercel / Netlify**：导入仓库，框架选 Vite，零配置
+- **纯本地**：`npm run build` 后直接双击 `dist/index.html` 也能打开
 
 ## 许可
 
