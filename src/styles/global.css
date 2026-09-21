@@ -1,0 +1,160 @@
+/* ============================================================
+   全局样式
+   ============================================================ */
+
+/* 阿里妈妈方圆体 VF（免费商用字体，来自阿里妈妈官方）
+   2.6MB 是整站最重的资源，已经配了 Cache-First，浏览器只会下一次 */
+@font-face {
+  font-family: 'AlimamaFangYuanTi';
+  src: url('../assets/fonts/AlimamaFangYuanTi-VF.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  /* 一个"像素"字符的格子尺寸 —— 必须和 tools/make-pixels.py 里的 CELL_W / CELL_H 一致，
+     改了这里就要重跑 `npm run pixels` 重新生成矩阵 */
+  --cell-w: 6px;
+  --cell-h: 13px;
+
+  --grid-size: 40px;
+  --grid-line: 1px;
+  --grid-color: #272727;
+
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-dim: #69707b;
+  --accent: #00d9ff;
+  --accent-2: #a78bfa;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #000;
+  /* 40px 网格背景：两条 1px 渐变线拼出来的，不需要图片 */
+  background-image:
+    linear-gradient(to right, var(--grid-color) var(--grid-line), transparent 0),
+    linear-gradient(to bottom, var(--grid-color) var(--grid-line), transparent 0);
+  background-size: var(--grid-size) var(--grid-size);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: 'AlimamaFangYuanTi', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  /* 原站是全站禁止选中文本的，不想要就删掉下面这行 */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+a,
+a:hover,
+a:link,
+a:visited,
+a:active,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6, span {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+  background: #010101;
+}
+
+/* ── 像素矩阵 ───────────────────────────────────────────────
+   这些 span 是用 createElement 动态插进去的，没有 Vue 的 data-v 属性，
+   所以样式必须写在全局，不能放进 <style scoped>。 */
+
+.pixel-canvas {
+  width: calc(var(--cols) * var(--cell-w));
+  height: calc(var(--rows) * var(--cell-h));
+  line-height: 0;
+  font-size: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pixel {
+  display: inline-block;
+  width: var(--cell-w);
+  height: var(--cell-h);
+  font-size: var(--cell-h);
+  line-height: var(--cell-h);
+  /* 用等宽字体渲染 █，字符宽度可预测；配合上面的固定宽高，跨平台不会漂 */
+  font-family: monospace, 'AlimamaFangYuanTi';
+  text-align: center;
+  vertical-align: top;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+/* 窄屏把格子缩小一档，省得像素画撑破布局 */
+@media (max-width: 1250px) {
+  :root {
+    --cell-w: 4px;
+    --cell-h: 8px;
+  }
+}
+
+/* 尊重系统"减弱动态效果"设置 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
