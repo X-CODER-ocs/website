@@ -28,7 +28,7 @@ export const site = {
   terminal: {
     // 命令本身不翻译，保持 whoami 才有终端味
     command: 'whoami',
-    output: 'xLord_cangjie',
+    output: 'XLord_cangjie',
     roles: {
       zh: ['全栈开发', '开源共建者'],
       en: ['Full-stack Developer', 'Open Source Builder'],
@@ -101,7 +101,7 @@ export const site = {
       'CODEOS-dev',
     ],
     // 每个组织最多展示几个（按最近更新排）
-    limitPerOrg: 8,
+    limitPerOrg: 25,
     // 想从列表里剔掉的仓库名
     skip: ['.github'],
   },
