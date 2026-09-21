@@ -76,11 +76,11 @@ export const site = {
     paragraphs: {
       zh: [
         '我做跨平台应用和开发工具，主要围绕 .NET 生态和现代 Web 技术栈——比起代码写得多漂亮，我更在意它是不是真的能跑起来。',
-        '目前在组织 Open Code Studio，维护几个开源项目，偶尔也做点和 Minecraft 相关的东西。',
+        '目前在 CodeHub 组织做开源，维护几个项目，偶尔也碰点 Minecraft 相关的东西。',
       ],
       en: [
         'I build cross-platform applications and developer tooling, mostly around the .NET ecosystem and the modern web stack — and I care more about whether something actually runs than how clever it looks.',
-        'Currently organizing Open Code Studio, maintaining a few open source projects, and occasionally shipping Minecraft-related things.',
+        'Currently building with CodeHub, maintaining a few open source projects, and occasionally shipping Minecraft-related things.',
       ],
     },
   },
