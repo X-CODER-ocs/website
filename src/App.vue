@@ -2,14 +2,13 @@
 import LayoutView from './components/LayoutView.vue'
 import HeaderView from './components/HeaderView.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
-import { site } from './data/site.js'
 </script>
 
 <template>
   <div class="root">
     <LayoutView>
       <HeaderView />
-      <ProjectsSection v-if="site.showProjects" />
+      <ProjectsSection />
     </LayoutView>
   </div>
 </template>

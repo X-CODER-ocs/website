@@ -1,0 +1,359 @@
+{
+  "generatedAt": "2026-09-21T11:53:12.655Z",
+  "user": {
+    "login": "X-CODER-ocs",
+    "name": "XLord",
+    "bio": "I code...(我编码...)",
+    "blog": "???有吗???",
+    "location": "Asia/Shanghai",
+    "avatar": "https://avatars.githubusercontent.com/u/211928879?v=4",
+    "url": "https://github.com/X-CODER-ocs",
+    "publicRepos": 8,
+    "followers": 0
+  },
+  "orgs": [
+    {
+      "login": "CodeHub-develop",
+      "name": "CodeHub",
+      "url": "https://github.com/CodeHub-develop",
+      "description": null,
+      "avatar": "https://avatars.githubusercontent.com/u/330414789?v=4",
+      "repoCount": 2,
+      "repos": [
+        {
+          "name": "MChub",
+          "url": "https://github.com/CodeHub-develop/MChub",
+          "description": null,
+          "language": "C#",
+          "color": [
+            23,
+            134,
+            0
+          ],
+          "stars": 0,
+          "updated": "2026-09-21T11:44:48Z"
+        }
+      ]
+    },
+    {
+      "login": "Open-code-Studio",
+      "name": "Open-code-Studio",
+      "url": "https://github.com/Open-code-Studio",
+      "description": null,
+      "avatar": "https://avatars.githubusercontent.com/u/271498833?v=4",
+      "repoCount": 22,
+      "repos": [
+        {
+          "name": "CodeNet",
+          "url": "https://github.com/Open-code-Studio/CodeNet",
+          "description": null,
+          "language": "C#",
+          "color": [
+            23,
+            134,
+            0
+          ],
+          "stars": 0,
+          "updated": "2026-09-19T11:35:40Z"
+        },
+        {
+          "name": "OpenMCL",
+          "url": "https://github.com/Open-code-Studio/OpenMCL",
+          "description": null,
+          "language": null,
+          "color": null,
+          "stars": 0,
+          "updated": "2026-09-02T13:11:48Z"
+        },
+        {
+          "name": "ISO-to-MOV",
+          "url": "https://github.com/Open-code-Studio/ISO-to-MOV",
+          "description": "转?!转?!",
+          "language": "Python",
+          "color": [
+            53,
+            114,
+            165
+          ],
+          "stars": 0,
+          "updated": "2026-08-01T12:08:54Z"
+        },
+        {
+          "name": "Craft-creator-Launcher",
+          "url": "https://github.com/Open-code-Studio/Craft-creator-Launcher",
+          "description": "CCL--新一代的MC创作者启动器!",
+          "language": null,
+          "color": null,
+          "stars": 0,
+          "updated": "2026-07-18T03:58:47Z"
+        },
+        {
+          "name": "JMCL",
+          "url": "https://github.com/Open-code-Studio/JMCL",
+          "description": "注意!!!这个启动器即将存档,请尽快更新到 CCL(Craft-creator-Launcher) 或 SCL(Slime Craft Launcher) !",
+          "language": "Java",
+          "color": [
+            176,
+            114,
+            25
+          ],
+          "stars": 0,
+          "updated": "2026-07-18T02:17:20Z"
+        },
+        {
+          "name": "Open-Script-OS",
+          "url": "https://github.com/Open-code-Studio/Open-Script-OS",
+          "description": null,
+          "language": "TeX",
+          "color": [
+            61,
+            97,
+            23
+          ],
+          "stars": 0,
+          "updated": "2026-07-15T10:40:04Z"
+        },
+        {
+          "name": "Byte-world",
+          "url": "https://github.com/Open-code-Studio/Byte-world",
+          "description": null,
+          "language": "C++",
+          "color": [
+            243,
+            75,
+            125
+          ],
+          "stars": 0,
+          "updated": "2026-07-14T03:49:46Z"
+        },
+        {
+          "name": "Open-web-docs.kit",
+          "url": "https://github.com/Open-code-Studio/Open-web-docs.kit",
+          "description": "新一代建站框架(文档站)",
+          "language": "CSS",
+          "color": [
+            86,
+            61,
+            124
+          ],
+          "stars": 0,
+          "updated": "2026-07-13T13:28:35Z"
+        }
+      ]
+    },
+    {
+      "login": "lively-Studio",
+      "name": "灵影制作组(lively Studio)",
+      "url": "https://github.com/lively-Studio",
+      "description": null,
+      "avatar": "https://avatars.githubusercontent.com/u/298620796?v=4",
+      "repoCount": 12,
+      "repos": [
+        {
+          "name": "Fantasy-Mob",
+          "url": "https://github.com/lively-Studio/Fantasy-Mob",
+          "description": null,
+          "language": "Java",
+          "color": [
+            176,
+            114,
+            25
+          ],
+          "stars": 0,
+          "updated": "2026-09-15T12:23:14Z"
+        },
+        {
+          "name": "Fantasy-the-end",
+          "url": "https://github.com/lively-Studio/Fantasy-the-end",
+          "description": "Fantasy Project : build the impossible MC update.",
+          "language": "Java",
+          "color": [
+            176,
+            114,
+            25
+          ],
+          "stars": 0,
+          "updated": "2026-09-15T11:44:07Z"
+        },
+        {
+          "name": "Fantasy-Debug",
+          "url": "https://github.com/lively-Studio/Fantasy-Debug",
+          "description": null,
+          "language": "Java",
+          "color": [
+            176,
+            114,
+            25
+          ],
+          "stars": 0,
+          "updated": "2026-09-15T11:43:56Z"
+        },
+        {
+          "name": "Fantasy-Project",
+          "url": "https://github.com/lively-Studio/Fantasy-Project",
+          "description": null,
+          "language": null,
+          "color": null,
+          "stars": 0,
+          "updated": "2026-09-10T11:37:17Z"
+        },
+        {
+          "name": "Lively-Visual-Effects",
+          "url": "https://github.com/lively-Studio/Lively-Visual-Effects",
+          "description": "“灵动:视效“存储库- PBR光影",
+          "language": "GLSL",
+          "color": [
+            86,
+            134,
+            165
+          ],
+          "stars": 0,
+          "updated": "2026-08-31T05:40:57Z"
+        },
+        {
+          "name": "Lively-Magic",
+          "url": "https://github.com/lively-Studio/Lively-Magic",
+          "description": null,
+          "language": "GLSL",
+          "color": [
+            86,
+            134,
+            165
+          ],
+          "stars": 0,
+          "updated": "2026-08-31T05:39:29Z"
+        },
+        {
+          "name": "Lively-Cinematic",
+          "url": "https://github.com/lively-Studio/Lively-Cinematic",
+          "description": null,
+          "language": "GLSL",
+          "color": [
+            86,
+            134,
+            165
+          ],
+          "stars": 0,
+          "updated": "2026-08-31T05:38:45Z"
+        },
+        {
+          "name": "Lively-Nightmare",
+          "url": "https://github.com/lively-Studio/Lively-Nightmare",
+          "description": "Lively-Nightmare · 灵动梦魇 | 暗黑梦魇风格光影 · 暗红黑 · 恐怖氛围",
+          "language": null,
+          "color": null,
+          "stars": 0,
+          "updated": "2026-08-30T00:44:08Z"
+        }
+      ]
+    },
+    {
+      "login": "Open-code-Studio-game",
+      "name": "Open-code-Studio-game",
+      "url": "https://github.com/Open-code-Studio-game",
+      "description": null,
+      "avatar": "https://avatars.githubusercontent.com/u/302150807?v=4",
+      "repoCount": 3,
+      "repos": [
+        {
+          "name": "lively-geometry",
+          "url": "https://github.com/Open-code-Studio-game/lively-geometry",
+          "description": null,
+          "language": "C#",
+          "color": [
+            23,
+            134,
+            0
+          ],
+          "stars": 0,
+          "updated": "2026-08-19T03:00:00Z"
+        },
+        {
+          "name": "Planar-Cube",
+          "url": "https://github.com/Open-code-Studio-game/Planar-Cube",
+          "description": "平面立方--一款开源的“开放探索+RPG角色扮演游戏“/Planar Cube--an open-source \"open exploration + RPG\" game.",
+          "language": "Java",
+          "color": [
+            176,
+            114,
+            25
+          ],
+          "stars": 0,
+          "updated": "2026-07-11T04:29:25Z"
+        }
+      ]
+    },
+    {
+      "login": "Lite-Flash-Studio",
+      "name": "Lite-Flash Studio",
+      "url": "https://github.com/Lite-Flash-Studio",
+      "description": null,
+      "avatar": "https://avatars.githubusercontent.com/u/240178386?v=4",
+      "repoCount": 3,
+      "repos": [
+        {
+          "name": "qing-notes",
+          "url": "https://github.com/Lite-Flash-Studio/qing-notes",
+          "description": null,
+          "language": "C#",
+          "color": [
+            23,
+            134,
+            0
+          ],
+          "stars": 0,
+          "updated": "2026-09-07T12:41:23Z"
+        },
+        {
+          "name": "File-APP",
+          "url": "https://github.com/Lite-Flash-Studio/File-APP",
+          "description": null,
+          "language": "Dart",
+          "color": [
+            0,
+            180,
+            171
+          ],
+          "stars": 0,
+          "updated": "2026-02-05T09:23:15Z"
+        },
+        {
+          "name": "code-pro",
+          "url": "https://github.com/Lite-Flash-Studio/code-pro",
+          "description": null,
+          "language": "Dart",
+          "color": [
+            0,
+            180,
+            171
+          ],
+          "stars": 0,
+          "updated": "2026-02-03T11:16:21Z"
+        }
+      ]
+    },
+    {
+      "login": "CODEOS-dev",
+      "name": "CODEOS-dev",
+      "url": "https://github.com/CODEOS-dev",
+      "description": null,
+      "avatar": "https://avatars.githubusercontent.com/u/319848622?v=4",
+      "repoCount": 1,
+      "repos": [
+        {
+          "name": "codeOS",
+          "url": "https://github.com/CODEOS-dev/codeOS",
+          "description": "codeOS — 基于 Omarchy 的中文本土化 Linux 发行版。内置中文 locale、国内镜像源、fcitx5-rime 输入法，Minecraft/Sulfur 主题，全系统品牌 codeOS。",
+          "language": "Shell",
+          "color": [
+            137,
+            224,
+            81
+          ],
+          "stars": 0,
+          "updated": "2026-09-12T09:32:34Z"
+        }
+      ]
+    }
+  ]
+}

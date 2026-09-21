@@ -70,7 +70,9 @@ export const site = {
   // TODO 这两段是我按印象写的，换成你自己的话
   about: {
     title: { zh: '关于', en: 'About' },
-    workTitle: { zh: '项目', en: 'Work' },
+    workTitle: { zh: '项目', en: 'Projects' },
+    moreOnGithub: { zh: '在 GitHub 上看全部', en: 'See everything on GitHub' },
+    noDescription: { zh: '这个仓库还没写简介', en: 'No description yet' },
     paragraphs: {
       zh: [
         '我做跨平台应用和开发工具，主要围绕 .NET 生态和现代 Web 技术栈——比起代码写得多漂亮，我更在意它是不是真的能跑起来。',
@@ -83,63 +85,26 @@ export const site = {
     },
   },
 
-  /* ---------- 7. 项目列表 ---------- */
-  // 不想展示项目区就设成 false
-  showProjects: true,
-  // TODO 仓库链接请核对一遍，我按记忆填的
-  projects: [
-    {
-      name: 'MChub',
-      url: 'https://github.com/CodeHub-develop/MChub',
-      description: {
-        zh: '基于 .NET 10 和 Avalonia 的跨平台工作台。',
-        en: 'A cross-platform workspace built on .NET 10 and Avalonia.',
-      },
-      tags: [
-        { name: '.NET 10', color: [139, 69, 167] },
-        { name: 'Avalonia', color: [139, 69, 167] },
-        { name: 'App', color: [1, 220, 255] },
-      ],
-    },
-    {
-      name: 'JVM-MCL-Server',
-      url: 'https://github.com/Open-code-Studio/JMCL-for-servers',
-      description: {
-        zh: '带网页控制面板的无界面 Minecraft 服务端启动器。',
-        en: 'Headless Minecraft server launcher with a web control panel.',
-      },
-      tags: [
-        { name: 'Spring Boot', color: [23, 134, 0] },
-        { name: 'React', color: [65, 184, 131] },
-        { name: 'Docker', color: [0, 191, 255] },
-      ],
-    },
-    {
-      name: 'open-panel',
-      url: 'https://github.com/Open-code-Studio/open-panel',
-      description: {
-        zh: '用 Flutter 写的跨平台远程控制面板。',
-        en: 'Cross-platform remote control panel built with Flutter.',
-      },
-      tags: [
-        { name: 'Flutter', color: [65, 184, 131] },
-        { name: 'Dart', color: [0, 191, 255] },
-        { name: 'App', color: [1, 220, 255] },
-      ],
-    },
-    {
-      name: 'OWD.K-MD3',
-      url: 'https://github.com/Open-code-Studio',
-      description: {
-        zh: '遵循 Material Design 3 的配置驱动文档框架。',
-        en: 'A config-driven documentation framework following Material Design 3.',
-      },
-      tags: [
-        { name: 'TypeScript', color: [0, 191, 255] },
-        { name: 'MD3', color: [206, 103, 141] },
-      ],
-    },
-  ],
+  /* ---------- 7. 项目（自动从 GitHub 拉，不用手写） ---------- */
+  // 仓库列表来自 src/data/github.json，由 `npm run fetch:github` 生成。
+  // 展示哪些组织、每个组织放几个，改下面这块就行。
+  showWork: true,
+  github: {
+    username: 'X-CODER-ocs',
+    // 聚合哪些组织，数组顺序就是页面上的顺序
+    orgs: [
+      'CodeHub-develop',
+      'Open-code-Studio',
+      'lively-Studio',
+      'Open-code-Studio-game',
+      'Lite-Flash-Studio',
+      'CODEOS-dev',
+    ],
+    // 每个组织最多展示几个（按最近更新排）
+    limitPerOrg: 8,
+    // 想从列表里剔掉的仓库名
+    skip: ['.github'],
+  },
 
   /* ---------- 8. 页脚 ---------- */
 

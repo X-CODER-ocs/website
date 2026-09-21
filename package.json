@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run fetch:github && vite build",
+    "fetch:github": "node tools/fetch-github.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "pixels": "python3 tools/make-pixels.py",
     "smoke": "node tools/smoke.mjs",

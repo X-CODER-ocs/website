@@ -26,9 +26,36 @@ npm run preview    # 本地预览打包结果
 | 页脚超大水印 | `site.watermark`（别超过 6 个字符，它是 `24vw` 撑满屏宽的） |
 | 首屏终端文案 | `site.terminal.*` |
 | 社交图标 | `site.socials`——**`url` 留空字符串这一项就不显示**，填上自动出现 |
-| 项目列表 | `site.projects`；整个区不想要就把 `showProjects` 设成 `false` |
+| 项目列表 | 自动从 GitHub 拉取，配 `site.github.orgs`（见下）；整区关闭设 `showWork: false` |
 | 自我介绍 | `site.about.paragraphs` |
 | 联系方式链接 | `site.contact.url`（QQ 加好友短链，点 Contact 直接跳转） |
+
+## 项目自动从 GitHub 拉取
+
+「项目」区不是手写的——`npm run build`（以及每次 push 部署）会先跑 `tools/fetch-github.mjs`，
+从 GitHub 拉账号、组织、仓库，生成 `src/data/github.json` 再打包进去。所以新建仓库、改了简介，
+重新部署就会自动出现在网站上，不用改代码。
+
+调整展示哪些组织，改 `site.js` 里的 `site.github`：
+
+| 配置 | 作用 |
+|---|---|
+| `username` | 账号名，拉 profile 和「看全部」链接用 |
+| `orgs` | 聚合哪些组织，数组顺序 = 页面顺序 |
+| `limitPerOrg` | 每个组织最多展示几个仓库（按最近更新排） |
+| `skip` | 想剔除的仓库名（默认跳过 `.github`） |
+
+单独刷新数据（不带 `GITHUB_TOKEN` 也能跑，只是看不到私有仓库）：
+
+```bash
+npm run fetch:github
+```
+
+带 token 能看到账号权限内的完整信息（脚本最后仍会过滤私有仓库，因为站点是公开的）：
+
+```bash
+GITHUB_TOKEN=$(gh auth token) npm run fetch:github
+```
 
 ## 中英双语
 
@@ -126,6 +153,7 @@ cangjie-site/
 │   ├── data/
 │   │   ├── site.js                ← 内容配置，日常只改这个
 │   │   ├── icons.js               SVG 图标素材
+│   │   ├── github.json            仓库/组织数据（fetch-github 生成，别手改）
 │   │   └── pixels.js              像素矩阵（自动生成，别手改）
 │   └── components/
 │       ├── LayoutView.vue         骨架：双层滚动背景 / 回顶
@@ -137,6 +165,7 @@ cangjie-site/
 └── tools/
     ├── make-pixels.py             像素矩阵生成器（换头像）
     ├── import-contact.py          联系方式图导入
+    ├── fetch-github.mjs           GitHub 数据抓取（build 前自动跑）
     ├── smoke.mjs                  SSR 冒烟测试
     └── preview.png                生成结果预览（自动产出）
 ```
